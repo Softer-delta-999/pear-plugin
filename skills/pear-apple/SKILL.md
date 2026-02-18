@@ -1,5 +1,5 @@
 ---
-name: pear-apple
+name: Pear - iCloud Calendar, Reminders & Contacts
 description: iCloud Calendar, Reminders & Contacts via Pear. Manage events, reminders, contacts, daily briefings, and AI scheduling. 27 tools for Apple iCloud via CalDAV/CardDAV.
 homepage: https://pearmcp.com
 metadata:

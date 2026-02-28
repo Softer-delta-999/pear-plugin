@@ -1,0 +1,70 @@
+-- Основні налаштування для автоматизації
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+-- Функція для автоматичного хілінгу
+local function heal()
+    while true do
+        wait(1)
+        if player.Character.Humanoid.Health < player.Character.Humanoid.MaxHealth * 0.99 then
+            -- Тут можна додати код для використання їжі або відновлення здоров'я
+            -- Приклад використання їжі для хілінгу
+            -- Гравець їсть їжу кожну секунду, поки здоров'я менше 99%
+            -- Змінити 10 на кількість їжі, яку потрібно з'їсти для повного хілінгу
+            player.Character.Humanoid:TakeDamage(0)  -- Задається функція, щоб уникнути смерті
+        end
+    end
+end
+
+-- Автоматичне проходження через блоки (NoClip)
+local function enableNoClip()
+    local noClip = Instance.new("BoolValue")
+    noClip.Name = "NoClip"
+    noClip.Parent = character:WaitForChild("Humanoid")
+    noClip.Value = true
+end
+
+-- Автофарм (збір ресурсів)
+local function autoFarm()
+    while true do
+        wait(2)  -- Час між кожним збором ресурсів
+        -- Ось код для автоматичного збору ресурсів (наприклад, дерев)
+        -- Ти можеш адаптувати його до конкретної гри
+        local resource = workspace:FindFirstChild("Resource")  -- Замінити на точний об'єкт гри
+        if resource then
+            -- Системи взаємодії з ресурсами
+            resource:Click()  -- Або будь-яка інша функція взаємодії
+        end
+    end
+end
+
+-- Автоматичне прискорення (Speed Hack)
+local function enableSpeedHack()
+    while true do
+        wait(0.1)
+        player.Character.Humanoid.WalkSpeed = 100  -- Змінити на бажану швидкість
+    end
+end
+
+-- Меню для запуску функцій
+local function showMenu()
+    local ScreenGui = Instance.new("ScreenGui")
+    local button = Instance.new("TextButton")
+    button.Size = UDim2.new(0, 200, 0, 50)
+    button.Position = UDim2.new(0, 100, 0, 100)
+    button.Text = "Запустити автоматизацію"
+    button.Parent = ScreenGui
+
+    -- Кнопка для запуску функцій
+    button.MouseButton1Click:Connect(function()
+        heal()  -- Запуск автоматичного хілінгу
+        enableNoClip()  -- Запуск NoClip
+        autoFarm()  -- Запуск автозбору ресурсів
+        enableSpeedHack()  -- Запуск прискорення
+    end)
+
+    ScreenGui.Parent = player:WaitForChild("PlayerGui")
+end
+
+-- Викликаємо меню після завантаження гри
+showMenu()
